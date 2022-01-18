@@ -1,0 +1,11 @@
+cms.dochoichu.com {
+  reverse_proxy {
+    to strapi:1337
+    header_down Access-Control-Allow-Origin "*"
+    header_down Access-Control-Allow-Methods "POST, GET, DELETE, PUT, OPTIONS"
+    header_down Access-Control-Allow-Headers "*"
+
+  }
+}
+
+
