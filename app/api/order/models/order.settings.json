@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "name": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "paymentOption": {
+      "type": "enumeration",
+      "enum": [
+        "COD",
+        "BANKING"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order-components.items"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "PROCESSING",
+        "PAID",
+        "DELIVERED",
+        "CANCELED"
+      ],
+      "default": "PROCESSING",
+      "private": true
+    }
+  }
+}

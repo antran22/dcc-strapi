@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/categories": {
+    "/orders": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -12,7 +12,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Category"
+                    "$ref": "#/components/schemas/Order"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Order"
         ],
         "parameters": [
           {
@@ -201,7 +201,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Order"
         ],
         "requestBody": {
           "description": "",
@@ -247,14 +247,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewOrder"
               }
             }
           }
         }
       }
     },
-    "/categories/count": {
+    "/orders/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -306,12 +306,12 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Order"
         ],
         "parameters": []
       }
     },
-    "/categories/{slug}": {
+    "/orders/{id}": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +321,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -359,11 +359,11 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Order"
         ],
         "parameters": [
           {
-            "name": "slug",
+            "name": "id",
             "in": "path",
             "description": "",
             "deprecated": false,
@@ -373,9 +373,7 @@
             }
           }
         ]
-      }
-    },
-    "/categories/{id}": {
+      },
       "put": {
         "deprecated": false,
         "description": "Update a record",
@@ -385,7 +383,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Category"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -423,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Order"
         ],
         "requestBody": {
           "description": "",
@@ -431,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewCategory"
+                "$ref": "#/components/schemas/NewOrder"
               }
             }
           }
@@ -497,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Category"
+          "Order"
         ],
         "parameters": [
           {
@@ -516,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Category": {
+      "Order": {
         "required": [
           "id"
         ],
@@ -524,61 +522,108 @@
           "id": {
             "type": "string"
           },
+          "email": {
+            "type": "string"
+          },
           "name": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
+          "phoneNumber": {
+            "type": "string"
           },
-          "products": {
+          "address": {
+            "type": "string"
+          },
+          "paymentOption": {
+            "type": "string",
+            "enum": [
+              "COD",
+              "BANKING"
+            ]
+          },
+          "items": {
             "type": "array",
             "items": {
+              "type": "object",
               "required": [
-                "id",
-                "title",
-                "description",
-                "image",
-                "status"
+                "id"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "title": {
-                  "type": "string"
+                "quantity": {
+                  "type": "integer"
                 },
-                "description": {
-                  "type": "string"
-                },
-                "price": {
-                  "type": "number"
-                },
-                "image": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
+                "product": {
+                  "required": [
+                    "id",
+                    "title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "thumbnails": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "sizes": {
+                      "type": "component"
+                    },
+                    "colors": {
+                      "type": "component"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "meaning_short": {
+                      "type": "string"
+                    },
+                    "usage": {
+                      "type": "string"
+                    },
+                    "specifications": {
+                      "type": "string"
+                    },
+                    "specifications_short": {
+                      "type": "string"
+                    },
+                    "theme_color_code": {
+                      "type": "string"
+                    },
+                    "cross_sell": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
                   }
                 },
-                "Custom_field": {
-                  "type": "component"
-                },
-                "status": {
-                  "type": "string",
-                  "enum": [
-                    "draft",
-                    "published"
-                  ]
-                },
-                "created_by": {
+                "color": {
                   "type": "string"
                 },
-                "updated_by": {
+                "size": {
                   "type": "string"
                 }
               }
@@ -586,19 +631,124 @@
           }
         }
       },
-      "NewCategory": {
+      "NewOrder": {
         "properties": {
+          "email": {
+            "type": "string"
+          },
           "name": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
+          "phoneNumber": {
+            "type": "string"
           },
-          "products": {
+          "address": {
+            "type": "string"
+          },
+          "paymentOption": {
+            "type": "string",
+            "enum": [
+              "COD",
+              "BANKING"
+            ]
+          },
+          "items": {
             "type": "array",
             "items": {
-              "type": "string"
+              "type": "object",
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "integer"
+                },
+                "product": {
+                  "required": [
+                    "id",
+                    "title"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "thumbnails": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "sizes": {
+                      "type": "component"
+                    },
+                    "colors": {
+                      "type": "component"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "meaning_short": {
+                      "type": "string"
+                    },
+                    "usage": {
+                      "type": "string"
+                    },
+                    "specifications": {
+                      "type": "string"
+                    },
+                    "specifications_short": {
+                      "type": "string"
+                    },
+                    "theme_color_code": {
+                      "type": "string"
+                    },
+                    "cross_sell": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "color": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "string"
+                }
+              }
             }
+          },
+          "status": {
+            "type": "string",
+            "default": "PROCESSING",
+            "enum": [
+              "PROCESSING",
+              "PAID",
+              "DELIVERED",
+              "CANCELED"
+            ]
           },
           "created_by": {
             "type": "string"
@@ -612,7 +762,7 @@
   },
   "tags": [
     {
-      "name": "Category"
+      "name": "Order"
     }
   ]
 }

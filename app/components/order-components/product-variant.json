@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_order_components_product_variants",
+  "info": {
+    "name": "productVariant",
+    "icon": "archive"
+  },
+  "options": {},
+  "attributes": {
+    "product": {
+      "model": "product"
+    },
+    "color": {
+      "type": "string"
+    }
+  }
+}

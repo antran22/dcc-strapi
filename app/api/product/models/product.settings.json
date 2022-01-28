@@ -2,56 +2,71 @@
   "kind": "collectionType",
   "collectionName": "products",
   "info": {
-    "name": "product"
+    "name": "product",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": true
   },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "string",
-      "required": true
-    },
     "price": {
-      "type": "float"
-    },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": true
+      "type": "integer",
+      "min": 0,
+      "default": 0
     },
     "slug": {
       "type": "uid",
       "targetField": "title"
     },
-    "categories": {
-      "collection": "category",
-      "via": "products"
+    "thumbnails": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     },
-    "Custom_field": {
+    "sizes": {
       "type": "component",
       "repeatable": true,
-      "component": "custom.custom-field"
+      "component": "product-components.size"
     },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "draft",
-        "published"
-      ],
-      "default": "published",
-      "required": true
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-components.color"
+    },
+    "meaning": {
+      "type": "richtext"
+    },
+    "meaning_short": {
+      "type": "string"
+    },
+    "usage": {
+      "type": "richtext"
+    },
+    "specifications": {
+      "type": "richtext"
+    },
+    "specifications_short": {
+      "type": "string"
+    },
+    "theme_color_code": {
+      "type": "string"
+    },
+    "cross_sell": {
+      "collection": "product"
     }
   }
 }

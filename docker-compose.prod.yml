@@ -1,7 +1,10 @@
 version: '3'
 services:
   strapi:
-    image: strapi/strapi:latest
+    image: dochoichu/strapi:latest
+    build:
+      context: app
+      dockerfile: ../Dockerfile
     environment:
       DATABASE_CLIENT: postgres
       DATABASE_NAME: strapi
@@ -12,10 +15,7 @@ services:
     depends_on:
       - postgres
     volumes:
-      - ./app:/srv/app
-    ports:
-      - "1337:1337"
-
+      - strapi-uploads:/app/public/uploads
 
   postgres:
     image: postgres
@@ -24,7 +24,7 @@ services:
       POSTGRES_USER: strapi
       POSTGRES_PASSWORD: strapi
     volumes:
-      - postgres-data-dev:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
 
   caddy:
     image: 'caddy:2-alpine'
@@ -39,9 +39,10 @@ services:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy-data:/data
       - caddy-config:/config
-    
+        
 volumes:
   caddy-data:
   caddy-config:
-  postgres-data-dev:
+  postgres-data:
+  strapi-uploads:
 
