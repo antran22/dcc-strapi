@@ -67,6 +67,9 @@
     },
     "cross_sell": {
       "collection": "product"
+    },
+    "size_guidance": {
+      "type": "richtext"
     }
   }
 }

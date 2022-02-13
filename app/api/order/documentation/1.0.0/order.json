@@ -609,6 +609,9 @@
                         "type": "string"
                       }
                     },
+                    "size_guidance": {
+                      "type": "string"
+                    },
                     "published_at": {
                       "type": "string"
                     },
@@ -719,6 +722,9 @@
                       "items": {
                         "type": "string"
                       }
+                    },
+                    "size_guidance": {
+                      "type": "string"
                     },
                     "published_at": {
                       "type": "string"
