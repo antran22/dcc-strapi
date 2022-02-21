@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "combos",
   "info": {
-    "name": "Combo"
+    "name": "Combo",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -25,6 +26,28 @@
     },
     "content": {
       "type": "richtext"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "price": {
+      "type": "integer"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "theme_color_code": {
+      "type": "string"
     }
   }
 }

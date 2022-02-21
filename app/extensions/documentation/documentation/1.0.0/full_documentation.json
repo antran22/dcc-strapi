@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "02/13/2022 7:48:11 AM"
+    "x-generation-date": "02/14/2022 10:46:34 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3905,6 +3905,85 @@
           "content": {
             "type": "string"
           },
+          "images": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "price": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "theme_color_code": {
+            "type": "string"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -3929,6 +4008,15 @@
             "type": "string"
           },
           "content": {
+            "type": "string"
+          },
+          "price": {
+            "type": "integer"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "theme_color_code": {
             "type": "string"
           },
           "published_at": {
@@ -4057,6 +4145,58 @@
                 },
                 "size": {
                   "type": "string"
+                },
+                "combo": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "meaning_short": {
+                      "type": "string"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "theme_color_code": {
+                      "type": "string"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -4171,6 +4311,58 @@
                 },
                 "size": {
                   "type": "string"
+                },
+                "combo": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "meaning_short": {
+                      "type": "string"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "theme_color_code": {
+                      "type": "string"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }

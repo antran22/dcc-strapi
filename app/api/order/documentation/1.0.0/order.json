@@ -628,6 +628,58 @@
                 },
                 "size": {
                   "type": "string"
+                },
+                "combo": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "meaning_short": {
+                      "type": "string"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "theme_color_code": {
+                      "type": "string"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -742,6 +794,58 @@
                 },
                 "size": {
                   "type": "string"
+                },
+                "combo": {
+                  "required": [
+                    "id"
+                  ],
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "products": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "meaning_short": {
+                      "type": "string"
+                    },
+                    "meaning": {
+                      "type": "string"
+                    },
+                    "content": {
+                      "type": "string"
+                    },
+                    "images": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "price": {
+                      "type": "integer"
+                    },
+                    "slug": {
+                      "type": "uid"
+                    },
+                    "theme_color_code": {
+                      "type": "string"
+                    },
+                    "published_at": {
+                      "type": "string"
+                    },
+                    "created_by": {
+                      "type": "string"
+                    },
+                    "updated_by": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
